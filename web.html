@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-image: url(bg.png);
+      color: white;
+    }
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: rgba(236, 20, 20, 0.979);
+    position: relative;
+  }
+  .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      color: white;
+    }
+    nav a {
+      margin: 0 1px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+  }
+  .order{
+    background-color: #ff6b6b;
+    transition: background-color 0.2s;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+  }
+  .order:active {
+  background-color: #171412;
+  }
+  .logo2 img {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    margin-left: 5%;
+    align-items: center;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px ;
+    background-image: url('back.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 79vh;
+  }
+  .hero-text {
+    max-width: 700px;
+    background-color: rgba(248, 123, 123, 0.433);
+    padding: 45px;
+    border-radius: 16px;
+  }
+  .hero-text h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  .hero-text p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .judul-menu {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
+  color: #fffdfd;
+  font-family: 'Pacifico', cursive;
+}
+
+.judul-menu::before,
+.judul-menu::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid rgb(255, 255, 255)
+
+}
+
+.judul-menu::before {
+  margin-right: 15px;
+}
+
+.judul-menu::after {
+  margin-left: 15px;
+}
+
+.judul-menu span {
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.menu {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 40px;
+  background-image: url(ap.jpeg);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 50px;
+  justify-items: center;
+  }
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fa420a7d;
+  border:  1px solid#fa420a;
+  border-radius: 16px;
+  padding: 40px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+.card .text {
+  max-width: 300px;
+}
+
+.text h4 {
+  color: #ff6b6b;
+  font-size: 20px;
+  margin: 0 20px 5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.text h2 {
+  font-size: 35px;
+  margin: 0 20px 5px;
+  font-weight: bold;
+  color: rgb(242, 238, 238);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+.text p {
+  color: #ff6b6b;
+  margin: 0 20px 5px;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.image img {
+  width: 200px;
+  height: auto;
+}
+.review{
+background-image: url(bg.png);
+font-family: cursive,'apple chancery';
+margin: 0;
+padding: 20px;
+}
+
+.rv{
+text-align: center;
+color: #fcf8f8;
+font-size: 36px;
+margin-bottom: 40px;
+}
+
+.review-section {
+display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap;
+}
+
+.review-card {
+background-color: white;
+padding: 20px;
+border-radius: 15px;
+width: 350px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 15px;
+}
+
+.profile img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.profile h3 {
+margin: 0;
+font-size: 18px;
+font-weight: bold;
+color: #171412;
+}
+
+.review-card p {
+font-size: 15px;
+color: #333;
+line-height: 1.5;
+}
+.footer {
+  text-align: center;
+  color: rgb(250, 248, 246);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-text {
+  font-size: 20px;
+  margin-bottom: 20px
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-icons img {
+  width: 50px;
+  height: 50px;
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">Happy Mie</div>
+    <nav>
+      <a href="#utama">HOME</a>
+      <a href="#Menu">MENU</a>
+      <a href="#review">REVIEW</a>
+      <a href="#sosmed">SOSMED</a>
+    </nav>
+    <a href="order.html">
+    <button class="order"> Order Now</button>
+    </a>
+  </header>
+
+
+  <div id="utama"></div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Noodle Roll</h1>
+      <p>Noodle roll adalah hidangan gulungan mie bermacam rasa original, nori, keju dan mix yang dimasak dengan cara digoreng. Rasanya gurih dan teksturnya lembut hingga renyah. Cocok sebagai camilan atau hidangan utama.</p>
+      </div>
+    
+    </div>
+    <div class="logo2"> <img src="https://raw.githubusercontent.com/febyanaa/jamas/refs/heads/main/WhatsApp%20Image%202024-12-10%20at%2012.05.40.jpeg" alt=""></div>
+  </section>
+  <div id="Menu">
+  <div class="judul-menu">
+    <span>Menu</span>
+  </div>
+
+  <div class="menu">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="text">
+      <h4>Varian:</h4>
+      <h2>Original</h2>
+      <p>Rp. 10.000,-</p>
+    </div>
+    <div class="image">
+      <img src="original.png" alt="Mie Original">
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="text">
+      <h4>Varian</h4>
+      <h2>Nori</h2>
+      <p>Rp. 11.000,-</p>
+    </div>
+    <div class="image">
+      <img src="nori.png" alt="Nori">
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="text">
+      <h4>Varian</h4>
+      <h2>Keju</h2>
+      <p>Rp. 13.000,-</p>
+    </div>
+    <div class="image">
+      <img src="keju.png" alt="Keju">
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="text">
+      <h4>Varian</h4>
+      <h2>Mix</h2>
+      <p>Rp. 14.000,-</p>
+    </div>
+    <div class="image">
+      <img src="mix.png" alt="Mix">
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div id="review">
+<div class="review">
+
+  <h1 class="rv">Read trusted reviews from our customers 🌟</h1>
+
+  <div class="review-section">
+    <div class="review-card">
+      <div class="profile">
+        <img src="https://i.pinimg.com/736x/18/91/94/18919409956af026c8c4ee6fcc49ca91.jpg" alt="Customer 1">
+        <h3>Costumer 1</h3>
+      </div>
+      <p>SUPPEER DUPPER MANTAP BGT! ENAK BGT! 😍 aku beli langsung 2 varian, mix and cheese. paling TERRRfavorite aku yg cheese sih. rate rasa 1000/10 ❤️❤️. bener bener enak mantap bgt isinya full ga pelit + bikin kenyang pastinya 🤤 pokonya ga bakal rugi sih 🐱</p>
+    </div>
+
+    <div class="review-card">
+      <div class="profile">
+        <img src="https://i.pinimg.com/736x/33/a2/76/33a276c2499d652cd862d0ac261ab5dc.jpg" alt="Customer 2">
+        <h3>Costumer 2</h3>
+      </div>
+      <p>aaa makasih yaa samyang roll nyaa udh dianterinn, enakkk banget banget bangettt, RATE DARI AKU 1000000/10, BAIK BANGETT GA PELITT TOPPINGGG 😍😍😋, resultnyaaa cakep bgt rapi bangettt roll nyaa, packaging nya jugaa mantep aman bgttt, pelayanan nya +++++, makasih yaaaa</p>
+    </div>
+
+    <div class="review-card">
+      <div class="profile">
+        <img src="https://i.pinimg.com/736x/60/ef/f1/60eff195cb3fb5f0fa6338e3791814e9.jpg" alt="Customer 3">
+        <h3>Costumer 3</h3>
+      </div>
+      <p>ENAKKK WEYYY 100/100 imimaaa, aku ga expect bakal gede noodle roll nyaa, jadii bikin kenyanggg, bisa ganjel perut 😍😋🤤</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<br>
+<br>
+<div id="sosmed">
+  <div class="footer">
+  <p class="footer-text">Kunjungi website kami!</p>
+
+  <div class="footer-icons">
+    <a href=" https://maps.apple.com/?ll=-6.394495,107.436292&q=My%20Location&t=m" target="_blank">
+      <img src="map.png" alt="Lokasi">
+    </a>
+    <a href="https://wa.me/6283879736645" target="_blank">
+      <img src="whatsapp.png" alt="whatsapp">
+    </a>
+    <a href="shopee.co.id/happymie.store" target="_blank">
+      <img src="s.png" alt="Shopee">
+    </a>
+    <a href="https://www.instagram.com/happymie.store" target="_blank">
+      <img src="instagram.png" alt="instagram">
+    </a>
+    <a href="https://www.facebook.com/share/1BS3gXBgpz/" target="_blank">
+      <img src="facebook.png" alt="facebook">
+    </a>
+    <a href="https://x.com/happymiestore?s=21" target="_blank">
+      <img src="twitter.png" alt="twitter">
+    </a>
+    <a href="https://youtube.com/@happymiestore?si=16ishyNskr1bx6Al" target="_blank">
+      <img src="youtube.png" alt="youtube">
+    </a>
+  </div>
+</div>
+
+</div>
+<br>
+
+
+
+
+
+  
+</body>
+</html>

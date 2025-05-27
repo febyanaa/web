@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Score Counter</title>
+  <style>
+  .card{
+    background-color: white;
+    width: 300px;
+    height: 75;
+    font-family: Arial, Helvetica, sans-serif;
+    margin : auto;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    
+
+}
+
+.card .header{
+    width: 100%;
+    height: 200px;
+    background-image: url("./image-header.jpg");
+    background-size: cover;
+}
+
+.card .display {
+    width: 100%;
+    display:  flex;
+    justify-content: center;
+    text-align: center;
+    gap : 30px;
+}
+
+
+.card h1 {
+    text-align: center;
+}
+
+
+.card .container-button{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card .container-button button {
+    flex : 1;
+    border: none;
+    padding : 20px;
+    border-radius: 0;
+}
+
+.card .container-button button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card .container-button button:nth-child(1) {
+    background-color: lightblue;
+}
+
+.card .container-button button:nth-child(2) {
+    background-color: lightgreen;
+}
+
+
+.card .container-button button:nth-child(3) {
+    background-color: lightcoral;
+}
+.text{
+    text-align: center;
+}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+         <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/photo/radarjember/2023/02/jpeg-optimizer_IMG-1964.jpg" height=170px" width="300"
+      alt="">
+    </div>
+
+    <div class="display">
+      <div>
+        <h3 id="timA" onclick="ubahnamaA()">TEAM A</h3>
+        <h4 id="p1display">0</h4>
+      </div>
+      <div>
+        <h3 id="timB" onclick="ubahnamaB()">TEAM B</h3>
+        <h4 id="p2display">0</h4>
+      </div>
+    </div>
+
+    <div class="container-button">
+      <button onclick="addScoreP1()">+ P1</button>
+      <button onclick="addScoreP2()">+ P2</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+  </div>
+  <div class="text">
+        <h1 id="winText" onclick="winText()"></h1>
+  </div>
+  
+  <script>
+      let maxScore = 3;
+      function addScoreP1(){
+          let scoreDisplayP1 = document.getElementById("p1display")
+          let scoreDisplayP2 = document.getElementById("p2display")
+          let winText = document.getElementById("winText")
+          
+          const p1 = document.getElementById("p1display");
+        
+          let last = p1.textContent
+          let scoreP1 = Number(last) + 1;
+          p1.textContent = scoreP1;
+          
+          if(scoreP1 == maxScore){
+          scoreDisplayP1 .style.color = "green";
+          scoreDisplayP2 .style.color = "red";
+          winText.textContent = "Tim A Menang!"
+      }
+      }
+      function addScoreP2(){
+          let scoreDisplayP1 = document.getElementById("p1display")
+          let scoreDisplayP2 = document.getElementById("p2display")
+          let winText = document.getElementById("winText")
+          
+          const p2 = document.getElementById("p2display");
+        
+          let last = p2.textContent
+          let scoreP2 = Number(last) + 1;
+          p2.textContent = scoreP2;
+          
+          if(scoreP2 == maxScore){
+          scoreDisplayP2 .style.color = "green";
+          scoreDisplayP1 .style.color = "red";
+          winText.textContent = "Tim B Menang!"
+      }
+      }
+      function reset(){
+          const p1 = document.getElementById("p1display");
+          const p2 = document.getElementById("p2display");
+          const text = document.getElementById("winText")
+          const ubahA = document.getElementById("timA")
+          const ubahB = document.getElementById("timB")
+          scoreP1 = 0;
+          scoreP2 = 0;
+          text.textContent = "";
+          ubahA.textContent = "Team A";
+          ubahB.textContent = "Team B";
+          p1.textContent = scoreP1;
+          p2.textContent = scoreP2;
+          p1.style.color = "black";
+          p2.style.color = "black";
+      }
+      
+      function ubahnamaA(){
+          let nama = prompt("nama baru");
+          if (nama){
+              document.getElementById("timA").innerText = nama;
+          }
+      }
+      function ubahnamaB(){
+          let nama = prompt("nama baru");
+          if (nama){
+           document.getElementById("timB").innerText = nama;
+          }
+      }
+  </script>
+</body>
+</html>
